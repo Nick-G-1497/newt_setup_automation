@@ -97,10 +97,8 @@ usermod -a -G plugdev $SUDO_USER;
 # Add the gpg key to package manager
 wget -qO - https://raw.githubusercontent.com/JuulLabs-OSS/debian-mynewt/master/mynewt.gpg.key | sudo apt-key add -;
 
-# # Add to apt.list
-# # tee /etc/apt/sources.list.d/mynewt.list <<EOF
-# # deb https://raw.githubusercontent.com/JuulLabs-OSS/debian-mynewt/master latest main
-# # EOF
+# Add to apt.list
+echo "deb https://raw.githubusercontent.com/JuulLabs-OSS/debian-mynewt/master latest main" >> /etc/apt/sources.list.d/mynewt.list;
 apt-get update;
 
 # Install newt
@@ -123,6 +121,9 @@ apt-get install gdb-arm-none-eabi;
 # Set up ssh keys for you github
 clear;
 read -p "Enter the email for your github account : " email;
+read -p "Enter the username for your github account : " username;
+git config --global user.email $email;
+git config --global user.name $username;
 echo -e "${RED}Just hit enter to save it in the default location\n";
 echo -e "${RED}Add a passphrase or don't. I'm not responsible for your security and I'm not getting paid for this.\n";
 echo -e "${GREEN}Hit enter to continue\n";
