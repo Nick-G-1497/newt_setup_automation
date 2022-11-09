@@ -125,7 +125,7 @@ read -p "Enter the username for your github account : " username;
 git config --global user.email $email;
 git config --global user.name $username;
 echo -e "${RED}Just hit enter to save it in the default location\n";
-echo -e "${RED}Add a passphrase or don't. I'm not responsible for your security and I'm not getting paid for this.\n";
+echo -e "${RED}Add a passphrase or don't. I'm not your mother.\n";
 echo -e "${GREEN}Hit enter to continue\n";
 read response;
 ssh-keygen -t rsa -b 4096;
