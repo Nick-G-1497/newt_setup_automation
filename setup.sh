@@ -166,6 +166,7 @@ echo -e "${GREEN}[-] All dependancies should be installed ${NOCOLOR}";
 echo "Leave this window open and complete the following:";
 echo "         - Open up Slack and sign in";
 echo "         - Install Platformio IDE Extension for VSCode - (Can use the serial monitor for USB Console)";
+echo "         - Set up your git credentials with vscode";
 echo "         - Install Doxygen Documentation Generator Extension for VSCode";
 echo "         - Install GitHub Pull Requests and Issues Extension for VSCode";
 echo "         - Install C/C++ Extension Pack Extension for VSCode";
