@@ -140,7 +140,11 @@ echo -e "Now from the Account Settings section present on the left, select SSH a
 echo -e "To add a new key, Click on New SSH key\n";
 echo -e "    Under the title section, add a name to your key. Then in the key section, paste the key that we copied from our terminal. Finally, click on Add SSH key\n\n\n";
 
+echo -e "\n\n${BLUE} Copy in a terminal is CTL+SHIFT+C ${NOCOLOR}\n\n";
+
 echo -e "${RED} \n\n\nDO NOT CONTINUE UNTIL YOU HAVE DONE THIS ${NOCOLOR}\n\n";
+
+echo -e "Enter to continue\n";
 
 read response;
 
