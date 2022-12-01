@@ -6,8 +6,8 @@ NOCOLOR="\033[0m";
 GREEN="\033[32m"
 
 echo "======================================================================";
-echo -e "${BLUE}Development Env Setup Script for Ubuntu 22.02   (ver 1.2) ";
-echo -e "${BLUE}      - written by Nick Goralka (11/9/22)    ${NOCOLOR}";
+echo -e "${BLUE}Development Env Setup Script for Ubuntu 22.02   (ver 1.3) ";
+echo -e "${BLUE}      - written by Nick Goralka (12/1/22)    ${NOCOLOR}";
 echo "======================================================================";
 
 
@@ -40,6 +40,11 @@ if [ "$EUID" -ne 0 ]
           echo -e "${GREEN}      - Drive your damm computer like you mean it and sudo"
 	exit
 fi
+
+# Move current script into standardized location in the Documents Folder
+cd ..;
+mv newt_setup_automation /home/$SUDO_USER/Documents/;
+cd /home/@SUDO_USER/Documents;
 
 # Make sure packages and repos are up to date
 apt-get update;
@@ -105,7 +110,6 @@ apt-get update;
 apt-get install newt;
 
 # Install nrf command line tools
-wget https://www.nordicsemi.com/-/media/Software-and-other-downloads/Desktop-software/nRF-command-line-tools/sw/Versions-10-x-x/10-18-1/nrf-command-line-tools_10.18.1_amd64.deb;
 dpkg -i nrf-command-line-tools_10.18.1_amd64.deb;
 mv nrf-command-line-tools_10.18.1_amd64.deb /tmp/;
 
@@ -151,7 +155,7 @@ read response;
 # Clone the Decawave Repository
 cd /home/$SUDO_USER/Documents;
 git clone git@github.com:Decawave/uwb-apps.git;
-chown $SUDO_USER uwb-apps;
+chown -R $SUDO_USER uwb-apps;
 chmod -R 777 uwb-apps;
 cd uwb-apps;
 newt upgrade;
