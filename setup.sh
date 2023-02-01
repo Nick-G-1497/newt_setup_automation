@@ -43,8 +43,9 @@ fi
 
 # Move current script into standardized location in the Documents Folder
 cd ..;
+mv newt_setup_automation-main newt_setup_automation;
 mv newt_setup_automation /home/$SUDO_USER/Documents/;
-cd /home/@SUDO_USER/Documents;
+cd /home/@SUDO_USER/Documents/newt_setup_automation;
 
 # Make sure packages and repos are up to date
 apt-get update;
@@ -126,10 +127,8 @@ apt-get install gdb-arm-none-eabi;
 clear;
 read -p "Enter the email for your github account : " email;
 read -p "Enter the username for your github account : " username;
-su $SUDO_USER;
 git config --global user.email $email;
 git config --global user.name $username;
-su root;
 
 echo -e "${RED}Just hit enter to save it in the default location\n";
 echo -e "${RED}Add a passphrase or don't. I'm not your mother.\n";
