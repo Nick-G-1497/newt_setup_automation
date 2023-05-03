@@ -4,6 +4,10 @@
 
 This script is meant to automate the time consuming and tedious task of downloading dependancies and setting up all the neccisary tools for a proper development environment on a Linux machine. 
 
+### Issues
+
+ - The script includes all the required steps in order to install all the dependancies, however, it may be that they are not installed in the correct order in the script or the scipt may install some things under root instead of the user who runs the script. This was something that was not fully resolved as the only way to test the script was completely wipe the partition/disk and install a fresh version of the OS and this is extremely time consuming. We needed to prioritize other aspects of the project.
+
 ## How to run the script?
 
 All that is needed to run this script is a fresh Ubuntu 22.04 Linux install (https://ubuntu.com/#download). If you have never done this before please refer to this tutorial or the numberous other sources on the internet (https://www.freecodecamp.org/news/how-to-dual-boot-any-linux-distribution-with-windows/).
